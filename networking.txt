@@ -1,0 +1,205 @@
+command to take the datafile backup:
+-------------------------------------------------
+
+rman target /
+
+RMAN> backup datafile <file_id or file_name>;
+
+command to take tablespace backup
+--------------------------------------------------
+
+RMAN> backup tablespace <tablespace name>;
+
+comman to take 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					CONCEPT OF NETWORKING BETWEEN  TWO SERVERS
+
+
+
+
+
+
+
+
+
+                                                     				  karthik.rbk.com
+
+
+
+
+[root@karthik ~]# hostname
+karthik.rbk.com
+[root@karthik ~]# ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:0C:29:42:0E:C2
+          inet addr:192.168.230.50  Bcast:192.168.182.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:29ff:fe42:ec2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:9 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:9 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:540 (540.0 b)  TX bytes:546 (546.0 b)
+          Interrupt:193 Base address:0x2024
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:1565 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1565 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:2097164 (2.0 MiB)  TX bytes:2097164 (2.0 MiB)
+
+[root@karthik ~]# ping 192.168.230.50
+PING 192.168.230.50 (192.168.230.50) 56(84) bytes of data.
+64 bytes from 192.168.230.50: icmp_seq=0 ttl=64 time=0.000 ms
+64 bytes from 192.168.230.50: icmp_seq=1 ttl=64 time=0.036 ms
+64 bytes from 192.168.230.50: icmp_seq=2 ttl=64 time=0.036 ms
+64 bytes from 192.168.230.50: icmp_seq=3 ttl=64 time=0.085 ms
+
+--- 192.168.230.50 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 2999ms
+rtt min/avg/max/mdev = 0.000/0.039/0.085/0.030 ms, pipe 2
+[root@karthik ~]# ping karthik.rbk.com
+PING karthik.rbk.com (127.0.0.1) 56(84) bytes of data.
+64 bytes from karthik.rbk.com (127.0.0.1): icmp_seq=0 ttl=64 time=0.024 ms
+64 bytes from karthik.rbk.com (127.0.0.1): icmp_seq=1 ttl=64 time=0.085 ms
+
+--- karthik.rbk.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 0.024/0.054/0.085/0.031 ms, pipe 2
+[root@karthik ~]#
+[root@karthik ~]#
+[root@karthik ~]#
+[root@karthik ~]# ping 192.168.230.10
+PING 192.168.230.10 (192.168.230.10) 56(84) bytes of data.
+64 bytes from 192.168.230.10: icmp_seq=0 ttl=64 time=1.06 ms
+64 bytes from 192.168.230.10: icmp_seq=1 ttl=64 time=0.245 ms
+64 bytes from 192.168.230.10: icmp_seq=2 ttl=64 time=0.357 ms
+
+--- 192.168.230.10 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 0.245/0.554/1.062/0.362 ms, pipe 2
+[root@karthik ~]#
+[root@karthik ~]#
+[root@karthik ~]# ping srvr55.rbk.com
+PING srvr55.rbk.com (192.168.230.10) 56(84) bytes of data.
+64 bytes from srvr55.rbk.com (192.168.230.10): icmp_seq=0 ttl=64 time=0.209 ms
+64 bytes from srvr55.rbk.com (192.168.230.10): icmp_seq=1 ttl=64 time=0.249 ms
+64 bytes from srvr55.rbk.com (192.168.230.10): icmp_seq=2 ttl=64 time=0.748 ms
+
+--- srvr55.rbk.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 0.209/0.402/0.748/0.245 ms, pipe 2
+
+
+
+
+						srvr55.rbk.com
+
+[root@srvr55 ~]# hostname
+srvr55.rbk.com
+[root@srvr55 ~]# ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:0C:29:26:87:4D
+          inet addr:192.168.230.10  Bcast:192.168.182.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:29ff:fe26:874d/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:11 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 b)  TX bytes:630 (630.0 b)
+          Interrupt:193 Base address:0x2024
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:1256 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1256 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:1522108 (1.4 MiB)  TX bytes:1522108 (1.4 MiB)
+
+[root@srvr55 ~]# ping sudha.dba.com
+PING sudha.dba.com (192.168.230.50) 56(84) bytes of data.
+64 bytes from sudha.dba.com (192.168.230.50): icmp_seq=0 ttl=64 time=1.14 ms
+64 bytes from sudha.dba.com (192.168.230.50): icmp_seq=1 ttl=64 time=0.593 ms
+64 bytes from sudha.dba.com (192.168.230.50): icmp_seq=2 ttl=64 time=0.615 ms
+64 bytes from sudha.dba.com (192.168.230.50): icmp_seq=3 ttl=64 time=0.525 ms
+
+--- sudha.dba.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3001ms
+rtt min/avg/max/mdev = 0.525/0.718/1.142/0.248 ms, pipe 2
+[root@srvr55 ~]#
+[root@srvr55 ~]#
+[root@srvr55 ~]#
+[root@srvr55 ~]#
+[root@srvr55 ~]# ping 192.168.230.10
+PING 192.168.230.10 (192.168.230.10) 56(84) bytes of data.
+64 bytes from 192.168.230.10: icmp_seq=0 ttl=64 time=0.000 ms
+64 bytes from 192.168.230.10: icmp_seq=1 ttl=64 time=0.094 ms
+64 bytes from 192.168.230.10: icmp_seq=2 ttl=64 time=0.068 ms
+
+--- 192.168.230.10 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 1999ms
+rtt min/avg/max/mdev = 0.000/0.054/0.094/0.039 ms, pipe 2
+[root@srvr55 ~]#
+[root@srvr55 ~]#
+[root@srvr55 ~]# ping 192.168.230.50
+PING 192.168.230.50 (192.168.230.50) 56(84) bytes of data.
+64 bytes from 192.168.230.50: icmp_seq=0 ttl=64 time=0.424 ms
+64 bytes from 192.168.230.50: icmp_seq=1 ttl=64 time=0.498 ms
+64 bytes from 192.168.230.50: icmp_seq=2 ttl=64 time=0.554 ms
+64 bytes from 192.168.230.50: icmp_seq=3 ttl=64 time=0.596 ms
+64 bytes from 192.168.230.50: icmp_seq=4 ttl=64 time=0.253 ms
+
+--- 192.168.230.50 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4003ms
+rtt min/avg/max/mdev = 0.253/0.465/0.596/0.120 ms, pipe 2
+[root@srvr55 ~]# ping karthik.rbk.com
+
+[root@srvr55 ~]# vi /etc/hosts
+[root@srvr55 ~]# ping karthik.rbk.com
+PING karthik.rbk.com (192.168.230.50) 56(84) bytes of data.
+64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=0 ttl=64 time=1.00 ms
+64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=1 ttl=64 time=0.706 ms64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=2 ttl=64 time=0.729 ms64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=3 ttl=64 time=0.674 ms64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=4 ttl=64 time=0.246 ms64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=5 ttl=64 time=0.788 ms64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=6 ttl=64 time=0.715 ms64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=7 ttl=64 time=0.657 ms64 bytes from karthik.rbk.com (192.168.230.50): icmp_seq=8 ttl=64 time=0.648 ms
+--- karthik.rbk.com ping statistics ---
+9 packets transmitted, 9 received, 0% packet loss, time 8005ms
+rtt min/avg/max/mdev = 0.246/0.684/1.000/0.187 ms, pipe 2
+
+
+
+
+
+
+
+
+
+
+
+
